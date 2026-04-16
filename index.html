@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>N.K. BUILDERS</title>
+
+<title>N.K. Builders | Construction Company in Gurugram</title>
+
+<meta name="description" content="N.K. Builders is the best construction company in Gurugram offering house construction, renovation, interior design and commercial projects.">
+<meta name="keywords" content="construction company Gurugram, house construction Gurugram, interior design Gurugram, renovation Gurugram">
+<meta name="author" content="N.K. Builders">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -15,6 +22,7 @@
     <nav>
         <a href="#">Home</a>
         <a href="#services">Services</a>
+        <a href="#about">About</a>
         <a href="#gallery">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -22,9 +30,9 @@
 
 <!-- HERO -->
 <section class="hero">
-    <h2>Building Dreams in Gurugram</h2>
-    <p>Expert in Construction, Renovation & Interior Design</p>
-    <button onclick="location.href='#contact'">Get a Quote</button>
+    <h2>Best Construction Company in Gurugram</h2>
+    <p>We build modern homes, interiors & commercial projects</p>
+    <button onclick="location.href='#contact'">Get Free Quote</button>
 </section>
 
 <!-- SERVICES -->
@@ -38,6 +46,28 @@
     </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About N.K. Builders</h2>
+    <p>
+        N.K. Builders is a trusted construction company in Gurugram providing
+        high-quality house construction, renovation, interior design and
+        commercial building services. We focus on modern design,
+        durability and customer satisfaction.
+    </p>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+    <h2>Why Choose Us?</h2>
+    <div class="service-container">
+        <div class="card">✔ Quality Work</div>
+        <div class="card">✔ Affordable Pricing</div>
+        <div class="card">✔ On-Time Delivery</div>
+        <div class="card">✔ Trusted Service</div>
+    </div>
+</section>
+
 <!-- GALLERY -->
 <section id="gallery" class="gallery">
     <h2>Our Projects</h2>
@@ -45,7 +75,6 @@
         <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
         <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
         <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
-        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
     </div>
 </section>
 
@@ -62,11 +91,9 @@
 
 <!-- MAP -->
 <section class="map">
-    <h2>Our Location</h2>
-    <iframe 
-        src="https://www.google.com/maps?q=28.361813,77.076490&output=embed"
-        width="100%" height="300" style="border:0;">
-    </iframe>
+    <h2>Our Location - Gurugram</h2>
+    <iframe src="https://www.google.com/maps?q=28.361813,77.076490&output=embed"
+    width="100%" height="300"></iframe>
 </section>
 
 <!-- FOOTER -->
@@ -82,23 +109,22 @@
 
 <script>
 (function(){
-    emailjs.init("NRDCjkb3Lp5psBUGH"); // 🔴 PASTE YOUR PUBLIC KEY HERE
+emailjs.init("YOUR_PUBLIC_KEY");
 })();
 
 function sendMessage(e){
-    e.preventDefault();
+e.preventDefault();
 
-    emailjs.send("service_09gsy47","template_xrttb3q",{
-        from_name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-    })
-    .then(function(){
-        alert("✅ Message sent successfully!");
-    }, function(error){
-        alert("❌ Failed to send message");
-        console.log(error);
-    });
+emailjs.send("service_09gsy47","template_xrttb3q",{
+from_name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+message: document.getElementById("message").value
+})
+.then(function(){
+alert("✅ Message sent successfully!");
+}, function(error){
+alert("❌ Failed to send message");
+});
 }
 </script>
 
