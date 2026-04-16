@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N.K. BUILDERS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <h1>N.K. BUILDERS</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>Building Dreams in Gurugram</h2>
+    <p>Expert in Construction, Renovation & Interior Design</p>
+    <button onclick="location.href='#contact'">Get a Quote</button>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-container">
+        <div class="card">House Construction</div>
+        <div class="card">Renovation</div>
+        <div class="card">Interior Design</div>
+        <div class="card">Commercial Projects</div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+    <h2>Our Projects</h2>
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156">
+        <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="sendMessage(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- MAP -->
+<section class="map">
+    <h2>Our Location</h2>
+    <iframe 
+        src="https://www.google.com/maps?q=28.361813,77.076490&output=embed"
+        width="100%" height="300" style="border:0;">
+    </iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 N.K. BUILDERS | Gurugram</p>
+</footer>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/918851026047" target="_blank">💬</a>
+
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("NRDCjkb3Lp5psBUGH"); // 🔴 PASTE YOUR PUBLIC KEY HERE
+})();
+
+function sendMessage(e){
+    e.preventDefault();
+
+    emailjs.send("service_09gsy47","template_xrttb3q",{
+        from_name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    })
+    .then(function(){
+        alert("✅ Message sent successfully!");
+    }, function(error){
+        alert("❌ Failed to send message");
+        console.log(error);
+    });
+}
+</script>
+
+</body>
+</html>
